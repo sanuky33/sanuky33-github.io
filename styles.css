@@ -1,0 +1,63 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "menu menu menu"
+        "left content right"
+        "footer footer footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 100vh;
+
+}
+header {
+    grid-area: header;
+    background: #473307;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+}
+nav {
+    grid-area: menu;
+    background: #000000;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+aside {
+    background: #f4f4f4;
+    padding: 1rem;
+}
+.left {
+    grid-area: left;
+}
+.right {
+    grid-area: right;
+}
+main {
+    grid-area: content;
+    padding: 1rem;
+    width: 80%;
+    margin: 1;
+}
+footer {
+    grid-area: footer;
+    background: #473307;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.marquee {
+    color: red;
+}

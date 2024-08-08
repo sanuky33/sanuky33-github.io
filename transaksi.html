@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Jual Mobil Bekas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor="#A9A9A9">
+    <header>
+        <h1>Jual Mobil Bekas</h1>
+    </header>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="invoice.html">Invoice</a>
+        <a href="contact.html">Kontak Kami</a>
+    </nav>
+    <aside class="left">
+        
+    </aside
+    <div class="container">
+        <main class="form-transaksi">
+            <h2>Form Transaksi</h2>
+            <form id="transaksiForm">
+                <label for="nama">Nama:</label><br>
+                <input type="text" id="nama" name="nama" required><br><br>
+                <label for="nama">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="alamat">Alamat:</label><br>
+                <textarea id="alamat" name="alamat"></textarea><br><br>
+                <label for="produk">Produk:</label><br>
+                <div>
+                    <input type="radio" id="Pajero Sport" name="mobilType" value="Pajero Sport" data-price="553000000">
+                    <label for="Pajero Sport">Pajero Sport</label>
+                </div>
+                <div>
+                    <input type="radio" id="Avanza Velos" name="mobilType" value="Avanza Velos" data-price="150000000">
+                    <label for="Avanza Velos">Avanza Velos</label>
+                </div>
+                <div>
+                    <input type="radio" id="Honda Brio RS" name="mobilType" value="Honda Brio RS" data-price="200000000">
+                    <label for="Honda Brio RS">Honda Brio RS</label>
+                </div><br>
+                <label for="date">Tanggal Pemesanan:</label><br>
+                <input type="date" id="date" name="date" required><br><br>
+                <button type="button" onclick="buatPesanan()">Beli</button>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <marquee> <p>&copy; 2024 Jual Mobil Bekas</p> </marquee>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const motorType = urlParams.get('mobil');
+
+        if (mobilType) {
+            document.getElementById(mobilType).checked = true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Jual Mobil Bekas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor="#A9A9A9">
+    <header>
+        <h1>Jual Mobil Bekas</h1>
+    </header>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="invoice.html">Invoice</a>
+        <a href="contact.html">Kontak Kami</a>
+    </nav>
+    <aside class="left">
+    </aside
+    <div class="container">
+        <main class="invoice">
+            <center><h2>Invoice</h2></center>
+            <p><strong>Nama:</strong> <span id="invoiceNama"></span></p>
+            <p><strong>Email:</strong> <span id="invoiceEmail"></span></p>
+            <p><strong>Alamat:</strong> <span id="invoiceAlamat"></span></p>
+            <p><strong>Produk:</strong> <span id="invoiceProduk"></span></p>
+            <p><strong>Total Pembayaran:</strong> <span id="invoiceTotal"></span></p>
+            <p><strong>Tanggal Pembelian:</strong> <span id="invoiceTanggal"></span></p>
+            
+        </main>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('invoiceNama').textContent = urlParams.get('nama');
+        document.getElementById('invoiceEmail').textContent = urlParams.get('email');
+        document.getElementById('invoiceAlamat').textContent = urlParams.get('alamat');
+        document.getElementById('invoiceProduk').textContent = urlParams.get('mobilType');
+        document.getElementById('invoiceTotal').textContent = 'Rp ' + new Intl.NumberFormat('id-ID').format(urlParams.get('price'));
+        document.getElementById('invoiceTanggal').textContent = urlParams.get('date');
+        
+    </script>
+    
+    <footer>
+        <marquee> <p>&copy; 2024 Jual Mobil Bekas</p> </marquee>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
